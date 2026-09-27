@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cha-Break Bot · Stage</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body class="stage">
+  <header class="topbar">
+    <h1>
+      <svg class="cup" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h17v7a7 7 0 0 1-7 7h-3a7 7 0 0 1-7-7z" fill="#e3a33b"/><path d="M22 14h2.5a3.5 3.5 0 0 1 0 7H21" fill="none" stroke="#e3a33b" stroke-width="2.4"/><path d="M10 4c-1 2 1 3 0 5M15 4c-1 2 1 3 0 5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".7"/></svg>
+      Cha-Break Bot <span style="font-family:var(--sans);font-weight:500;opacity:.75">· live</span>
+    </h1>
+    <span id="modelPill" class="pill">…</span>
+    <span id="people" class="pill">0 joined</span>
+    <div class="join" id="joinMini"><span>Join: <b id="joinUrl">…</b></span><img id="qrMini" alt="QR code to join"></div>
+  </header>
+  <nav class="acts" id="acts">
+    <button data-act="lobby">Join</button>
+    <button data-act="tools">1 · Tools</button>
+    <button data-act="rule">2 · Rule test</button>
+    <button data-act="claims">3 · Hallucination</button>
+    <button data-act="break">4 · Break it</button>
+    <button data-act="summary">Results</button>
+    <span class="spacer"></span>
+    <button class="gear" id="gear" title="Settings (S)">⚙ Settings</button>
+  </nav>
+  <main id="main"></main>
+  <div id="modal" class="modal" hidden></div>
+  <script src="/static/stage.js"></script>
+</body>
+</html>

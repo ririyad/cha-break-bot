@@ -1,0 +1,16 @@
+{
+  "name": "cha-break-bot-live",
+  "version": "1.0.0",
+  "description": "Audience-participation demo for the talk 'From Answering to Acting': tool calling, executor checks, hallucinations and evaluation, with a synthetic tea-stall menu.",
+  "main": "server.js",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "simulated": "node server.js --simulated",
+    "tunnel": "node server.js --tunnel",
+    "eval": "node src/evals.js",
+    "eval:simulated": "node src/evals.js --simulated"
+  }
+}
