@@ -135,9 +135,11 @@ function vLobby() {
       h('div', { class: 'eyebrow' }, 'Live demo · join now'),
       h('h2', {}, 'Scan to join', h('br'), 'Cha-Break Bot'),
       h('p', { style: 'font-size:1.25em;margin:0 0 .8em' }, 'Open your camera, scan the code, and keep the page open. You will ask an AI for tea-break snacks, vote, and try to trick it.'),
-      h('div', { class: 'count' }, String(S.participants.count)),
-      h('div', { class: 'muted' }, 'people joined'),
-      h('div', { class: 'names' }, names.map((n) => h('span', {}, n))),
+      h('div', { class: 'joined' },
+        h('div', { class: 'count' }, String(S.participants.count)),
+        h('div', { class: 'muted' }, 'people joined'),
+        h('div', { class: 'names' }, names.map((n) => h('span', {}, n))),
+      ),
     ),
   );
 }
