@@ -138,7 +138,6 @@ function vLobby() {
       h('div', { class: 'count' }, String(S.participants.count)),
       h('div', { class: 'muted' }, 'people joined'),
       h('div', { class: 'names' }, names.map((n) => h('span', {}, n))),
-      h('p', { class: 'muted', style: 'margin-top:1em;font-size:.9em' }, 'Same Wi-Fi as the presenter needed. The menu is synthetic, made up for teaching.'),
     ),
   );
 }
