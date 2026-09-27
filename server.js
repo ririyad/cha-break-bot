@@ -452,7 +452,7 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(200, { 'content-type': 'image/svg+xml', 'cache-control': 'no-store' });
       return res.end(qrSvg(joinUrl()));
     }
-    if (req.method === 'GET' && p === '/favicon.ico') { res.writeHead(204); return res.end(); }
+    if (req.method === 'GET' && p === '/favicon.ico') return sendFile(res, path.join(ROOT, 'public', 'favicon.svg'));
 
     // Live updates
     if (req.method === 'GET' && p === '/events') {
