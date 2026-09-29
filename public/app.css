@@ -199,6 +199,7 @@ body.stage { height: 100vh; overflow: hidden; font-size: clamp(14px, 1.05vw, 22p
 .stage .lobby .hello h2 { font-size: 3em; line-height: 1.05; margin: 0.15em 0 0.35em; }
 .stage .lobby .joined { text-align: center; margin-top: 0.6em; }
 .stage .lobby .joined .names { justify-content: center; }
+.stage .lobby .joined .names.more { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.6em), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 1.6em), transparent); }
 .stage .lobby .count { font-size: 4.5em; font-family: var(--serif); font-weight: 700; color: var(--leaf-3); line-height: 1; }
 [data-theme='dark'] .stage .lobby .count, [data-theme='dark'].stage .lobby .count { color: var(--cha); }
 .stage .names { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.8em; max-height: 30vh; overflow: hidden; }

@@ -112,6 +112,7 @@ function render() {
   if (raf) return;
   raf = requestAnimationFrame(() => { raf = 0; draw(); });
 }
+addEventListener('resize', render);
 function draw() {
   if (!S.act) return;
   const main = $('main');
@@ -122,13 +123,15 @@ function draw() {
   main.append(v());
   const feed = main.querySelector('.scroll.feed');
   if (feed) feed.scrollTop = scrollTop;
+  const names = main.querySelector('.lobby .names');
+  if (names) names.classList.toggle('more', names.scrollHeight > names.clientHeight + 1);
 }
 
 const card = (title, sub, ...kids) => h('section', { class: 'card' }, h('h2', {}, title, sub ? h('span', { class: 'sub' }, sub) : null), ...kids);
 const stat = (n, label, cls) => h('div', { class: `stat ${cls || ''}` }, h('b', {}, String(n)), h('span', {}, label));
 
 function vLobby() {
-  const names = S.participants.names.slice(-40);
+  const names = S.participants.names.slice(-40).reverse(); // newest first, so any overflow hides the oldest
   return h('div', { class: 'view lobby' },
     h('div', { class: 'qrbig' }, h('img', { src: `/qr.svg?u=${encodeURIComponent(S.snap.joinUrl)}`, alt: 'QR code to join' }), h('div', { class: 'url' }, S.snap.joinUrl.replace(/\/$/, ''))),
     h('div', { class: 'hello' },
