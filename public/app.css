@@ -196,14 +196,19 @@ body.stage { height: 100vh; overflow: hidden; font-size: clamp(14px, 1.05vw, 22p
 .stage .lobby .qrbig { background: #fff; border-radius: 20px; padding: 1.1em; box-shadow: var(--shadow); text-align: center; }
 .stage .lobby .qrbig img { width: min(62vh, 38vw); height: min(62vh, 38vw); display: block; }
 .stage .lobby .qrbig .url { font-family: var(--mono); color: #111; font-size: 1.05em; margin-top: 0.4em; }
-.stage .lobby .hello h2 { font-size: 3em; line-height: 1.05; margin: 0.15em 0 0.35em; }
-.stage .lobby .joined { text-align: center; margin-top: 0.6em; }
-.stage .lobby .joined .names { justify-content: center; }
-.stage .lobby .joined .names.more { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.6em), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 1.6em), transparent); }
-.stage .lobby .count { font-size: 4.5em; font-family: var(--serif); font-weight: 700; color: var(--leaf-3); line-height: 1; }
+.stage .lobby .hello { align-self: stretch; min-height: 0; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.2em 1em 0.5em; }
+.stage .lobby .hero h2 { font-size: 3.1em; line-height: 1.1; margin: 0.2em 0 0; }
+.stage .lobby .hero .brand { color: var(--leaf-3); white-space: nowrap; }
+[data-theme='dark'] .stage .lobby .hero .brand, [data-theme='dark'].stage .lobby .hero .brand { color: var(--cha); }
+.stage .lobby .joined { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 1em; }
+.stage .lobby .count { font-size: 6em; font-family: var(--serif); font-weight: 700; color: var(--leaf-3); line-height: 1; }
 [data-theme='dark'] .stage .lobby .count, [data-theme='dark'].stage .lobby .count { color: var(--cha); }
-.stage .names { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.8em; max-height: 30vh; overflow: hidden; }
-.stage .names span { background: var(--tint); border-radius: 999px; padding: 0.25em 0.75em; font-size: 0.95em; animation: pop 0.35s ease; }
+.stage .lobby .joined .label { font-size: 0.85em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.3em; }
+.stage .lobby .waiting { margin-top: 1.4em; font-size: 1.05em; }
+.stage .names { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55em; margin-top: 1.4em; max-width: 46em; max-height: 34vh; overflow: hidden; padding: 0.2em; }
+.stage .names.more { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 2em), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 2em), transparent); }
+.stage .names span { display: inline-flex; align-items: center; gap: 0.5em; background: var(--card); border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); border-radius: 999px; padding: 0.3em 0.9em 0.3em 0.3em; font-size: 1em; font-weight: 500; animation: pop 0.35s ease; }
+.stage .names span i { display: grid; place-items: center; width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--leaf-3); color: #fff; font-style: normal; font-weight: 700; font-size: 0.8em; }
 @keyframes pop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
 /* act 1: pipeline cards */

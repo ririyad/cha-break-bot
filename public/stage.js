@@ -135,12 +135,16 @@ function vLobby() {
   return h('div', { class: 'view lobby' },
     h('div', { class: 'qrbig' }, h('img', { src: `/qr.svg?u=${encodeURIComponent(S.snap.joinUrl)}`, alt: 'QR code to join' }), h('div', { class: 'url' }, S.snap.joinUrl.replace(/\/$/, ''))),
     h('div', { class: 'hello' },
-      h('div', { class: 'eyebrow' }, 'Live demo · join now'),
-      h('h2', {}, 'Scan to join', h('br'), 'Cha-Break Bot'),
+      h('header', { class: 'hero' },
+        h('div', { class: 'eyebrow' }, 'Live demo · join now'),
+        h('h2', {}, 'Scan to join ', h('span', { class: 'brand' }, 'Cha-Break Bot')),
+      ),
       h('div', { class: 'joined' },
         h('div', { class: 'count' }, String(S.participants.count)),
-        h('div', { class: 'muted' }, 'people joined'),
-        h('div', { class: 'names' }, names.map((n) => h('span', {}, n))),
+        h('div', { class: 'label' }, S.participants.count === 1 ? 'person joined' : 'people joined'),
+        names.length
+          ? h('div', { class: 'names' }, names.map((n) => h('span', {}, h('i', {}, (n.trim()[0] || '?').toUpperCase()), n)))
+          : h('div', { class: 'muted waiting' }, 'Waiting for the first person to scan…'),
       ),
     ),
   );
